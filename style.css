@@ -4,7 +4,8 @@
     --color-background: #fdfae2;
     --color-card: #A7BCC7;
     --color-text: #213448;
-    --font-handwriting:  'Comic Sans MS';
+    --font-handwriting:  'Poppins', sans-serif;
+    --font-logo: 'Satisfy', cursive;
     --color-success: #4CAF50;
     --color-error: #F44336;
     --color-warning: #FF9800;
@@ -51,7 +52,7 @@ body {
 }
 #logo span {
     color: var(--color-secondary);
-    font-family: var(--font-handwriting);
+    font-family: var(--font-logo);
     text-shadow: 0 0 5px var(--color-primary), 0 0 10px rgb(247, 247, 254), 0 0 15px rgb(176, 183, 255);
 }
 
@@ -124,7 +125,7 @@ body {
 }
 
 .header h1 {
-    font-family: var(--font-handwriting);
+    font-family: var(--font-logo);
     font-size: 1.8rem;
     color: white;
     font-weight: normal;
@@ -450,7 +451,6 @@ body {
     justify-content: center;
 }
 
-/* Add this to your CSS */
 .task-card {
     position: relative;
     cursor: pointer;
@@ -475,6 +475,7 @@ body {
 .task-card:hover .edit-hint {
     display: inline;
 }
+
 
 /* Pagination */
 .pagination {
