@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearMind To-Do List</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+     <div id="splash-screen">
+        <div>
+            <h1 id="logo">WELCOME TO <span>CLEAR MIND</span></h1>
+        </div>
+
+        <div class="loading-bar"></div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1><span>C</span>lear<span>M</span>ind</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h2>TASKS</h2>
+                <button class="task-filter active" onclick="switchTaskView('today')">
+                    <i class="fas fa-calendar-day"></i> Today
+                </button>
+                <button class="task-filter" onclick="switchTaskView('coming-up')">
+                    <i class="fas fa-calendar-week"></i> Coming up
+                </button>
+                <button class="task-filter">
+                    <i class="fas fa-chart-line"></i> Your Progress
+                </button>
+                <div class="progress-section">
+                    <p><span class="progress-done">0/0 done</span></p>
+                    <p><span class="progress-message">📝 Ready to begin!</span></p>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </aside>
+            <!-- notification div -->
+            <div class="notification" style="display: none;">
+                <p class="notification-message"></p>
+            </div>
+
+            <!-- Today section -->
+            <section class="task-list" id="today-tasks">
+                <div class="task-header">
+                    <h2>Today's tasks</h2>
+                    <div class="task-actions">
+                        <button class="action-button cancel-delete" onclick="cancelDelete()" style="display: none;">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button class="action-button delete-task" onclick="toggleDeleteMode()">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="action-button add-task" onclick="showAddTaskForm()">
+                            <i class="fas fa-plus"></i> Add task
+                        </button>
+                    </div>
+                </div>
+                <div class="notification">
+                    <span class="notification-message"></span>
+                </div>
+
+                <div class="new-task">
+                    <h3>Add New Task</h3>
+                    <input type="text" class="task-input" placeholder="Task title...">
+                    <input type="text" class="task-desc" placeholder="Task description...">
+                    <input type="date" class="task-date">
+                    <div class="task-actions">
+                        <button class="action-button submit-task" onclick="addTask()">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                        <button class="action-button cancel-task" onclick="hideAddTaskForm()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tasks-grid" id="today-cards">
+                    <!-- Task cards will be added here -->
+                </div>
+                <div class="pagination">
+                    <!-- Pagination buttons will be added dynamically -->
+                </div>
+            </section>
+
+            <!-- Coming up section -->
+            <section class="task-list" id="coming-up-tasks">
+
+                <div class="task-header">
+                    <h2>Coming up</h2>
+                    <div class="task-actions">
+                        <button class="action-button cancel-delete" onclick="cancelDelete()" style="display: none;">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button class="action-button delete-task" onclick="toggleDeleteMode()">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <button class="action-button add-task" onclick="showAddTaskForm()">
+                            <i class="fas fa-plus"></i> Add task
+                        </button>
+                    </div>
+                </div>
+                <div class="notification">
+                    <span class="notification-message"></span>
+                </div>
+
+                <div class="new-task">
+                    <h3>Add New Task</h3>
+                    <input type="text" class="task-input" placeholder="Task title...">
+                    <input type="text" class="task-desc" placeholder="Task description...">
+                    <input type="date" class="task-date">
+                    <div class="task-actions">
+                        <button class="action-button submit-task" onclick="addTask()">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                        <button class="action-button cancel-task" onclick="hideAddTaskForm()">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tasks-grid" id="coming-up-cards">
+                    <!-- Task cards will be added here -->
+                </div>
+                <div class="pagination">
+                    <!-- Pagination buttons will be added dynamically -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
